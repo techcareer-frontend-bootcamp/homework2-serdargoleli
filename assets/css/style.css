@@ -8,6 +8,7 @@
   --white-color: #fff;
   --dark-color: #121212;
   --white-color-text: #fff8f8;
+  --transition: all 0.3s cubic-bezier(0.15, 0.28, 0.36, 0.92);
 
   /********** Fonts **********/
   --body-font: "Poppins", sans-serif;
@@ -43,6 +44,10 @@ body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
   overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  background: url("../img/background.jpg") no-repeat center/cover;
+  position: relative;
 }
 
 h1,
@@ -60,8 +65,9 @@ ul {
 
 a {
   text-decoration: none;
-  color: #fff;
+  color: var(--dark-color);
   cursor: pointer;
+  transition: var(--transition);
 }
 
 img {
@@ -69,14 +75,118 @@ img {
   height: auto;
 }
 
+.hidden {
+  display: none;
+}
+
+.mx {
+  margin-right: 18px;
+  margin-left: 18px;
+}
 
 /* Navbar - Menu */
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 15px;
+  height: 50px;
+}
+.header .logo {
+  font-weight: 600;
+  font-size: 25px;
+}
+.header .logo span {
+  color: var(--white-color-text);
+}
 
+.toggle-menu {
+  border: none;
+  background: transparent;
+  font-size: 35px;
+  color: var(--dark-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+.rotate-90 {
+  transform: rotate(90deg);
+}
 
-
+/* Mobile Menu*/
+.navbar {
+  position: absolute;
+  left: 50%;
+  top: -100%;
+  transform: translateX(-50%);
+  background: var(--white-color);
+  width: calc(100% - 50px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+.open-mobile-menu {
+  top: 60px;
+  box-shadow: 0 0 5px #00000029;
+}
+.navbar a {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  display: block;
+}
+.navbar a:hover {
+  background: #f1f1f1;
+}
 /* Content */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 25px;
+  padding-right: 25px;
+  height: calc(100% - 150px);
+}
+.main-content .title {
+  margin-top: 25px;
+  font-size: 40px;
+  line-height: 45px;
+  color: var(--white-color-text);
+  text-align: center;
+}
+.main-content-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-content-right .subtitle {
+  color: var(--dark-color);
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.main-content-right .btn-play {
+  background: var(--first-color);
+  font-size: 52px;
+  border-radius: 100%;
+  width: 54px;
+  height: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white-color-text);
+  transition: var(--transition);
+}
 
-  
+.main-content .btn-play:hover {
+  background: #f88785;
+  cursor: pointer;
+}
 
 /* Social Media */
 
@@ -89,8 +199,68 @@ img {
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
 }
-  
+
+.social-media a i {
+  color: var(--white-color);
+  font-size: 34px;
+  transition: var(--transition);
+}
+.social-media a:hover i {
+  color: var(--dark-color);
+}
+
 /* Responsive */
 @media screen and (min-width: 768px) {
+  /* Navbar - Menu */
+  .navbar {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    background: none;
+    width: auto;
+    box-shadow: none;
+  }
+  .navbar a {
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: normal;
+  }
+  .navbar a:last-child {
+    margin-right: 0;
+  }
+  .navbar a:hover {
+    background: transparent;
+    color: var(--white-color-text);
+  }
 
+  .toggle-menu {
+    display: none;
+  }
+  /* Content */
+  .main-content,
+  .main-content-right {
+    flex-direction: row;
+  }
+  .main-content .title {
+    font-size: 50px;
+    line-height: 65px;
+    text-align: left;
+  }
+
+  .main-content-right .subtitle {
+    margin-bottom: 0;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  .main-content-right .btn-play {
+    font-size: 38px;
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Social Media */
+
+  .social-media a i {
+    font-size: 20px;
+  }
 }

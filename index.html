@@ -1,37 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homework2 - Responsive Landing Page </title>
-    <link rel="stylesheet" href="assets/css/style.css"> 
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-  
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homework2 - Responsive Landing Page</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <!-- HEADER -->
-    <header>
-        <h1>Starter Template</h1>
+    <header class="header">
+      <a href="" class="logo">Serdar <span>Göleli</span></a>
+      <nav class="navbar" id="menu">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Top5</a>
+        <a href="">Library</a>
+        <a href="">Contact</a>
+      </nav>
+      <button class="toggle-menu" id="toggle-menu">
+        <i class="bx bx-menu"></i>
+      </button>
     </header>
 
     <!-- MAIN CONTENT -->
-    <main>
-        <!-- HOME --> 
+    <main class="main-content">
+      <h1 class="title">NEVER<br />STOP<br />LISTENING</h1>
+      <div class="main-content-right">
+        <span class="subtitle">Click Here To Listen</span>
+        <span class="btn-play" id="btn-play"
+          ><i class="bx bx-play-circle"></i
+        ></span>
+      </div>
     </main>
 
-    
     <div class="social-media">
-        <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class='bx bxl-youtube'></i>
-        </a> 
-        
-        ... 
-
-        ...
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <i class="bx bxl-youtube"></i>
+      </a>
+      <a href="#" class="mx" target="_blank" rel="noopener noreferrer">
+        <i class="bx bxl-instagram"></i>
+      </a>
+      <a href="#" target="_blank" rel="noopener noreferrer">
+        <i class="bx bxl-twitter"></i>
+      </a>
     </div>
+
+    <audio id="music" class="hidden">
+      <source src="./assets/media/audio_file.mp3" type="audio/mpeg" />
+    </audio>
 
     <!-- MAIN JS;-->
     <script src="assets/js/main.js"></script>
-</body>
+  </body>
 </html>

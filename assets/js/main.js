@@ -1,25 +1,15 @@
-/*==================== SHOW MENU MOBILE ====================*/
-const showMenu = (toggleId, navId) => {
-    const toggle = document.getElementById(toggleId),
-          nav    = document.getElementById(navId);
+/*  MENU MOBILE TOGGLE */
+let openMenu = document.getElementById("toggle-menu");
+let mobileMenu = document.getElementById("menu");
 
-    if(toggle && nav) {
-        toggle.addEventListener('click', () => {
-            nav.classList.toggle('show')
-        })
-    }
-}
+openMenu.addEventListener("click", () => {
+  openMenu.classList.toggle("rotate-90");
+  mobileMenu.classList.toggle("open-mobile-menu");
+});
 
-showMenu('nav-toggle', 'nav-menu')
-
-/*==================== REMOVE MOBILE MENU ====================*/
-const navLink = document.querySelectorAll('.nav__link')
-
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show class
-    navMenu.classList.remove('show')
-}
-
-navLink.forEach(n => n.addEventListener('click', linkAction))
-
+/*  Music Play */
+let playMusic = document.getElementById("btn-play");
+let music = document.getElementById("music");
+playMusic.addEventListener("click", () => {
+  music.play();
+});
